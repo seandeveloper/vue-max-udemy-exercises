@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png">
+  <h1>Max's Udemy Complete Vue Course</h1>
+  <h4>Student: Sean Knowles</h4>
+  <h5>Exercise and VueJS examples from the Udemy course</h5>
+    <img width="50%" :src="logo">
     <br>
     <!-- Menu buttons -->
     <button @click="showS2 = !showS2">Section 2</button>
@@ -20,7 +23,8 @@
     <!-- SECTION 3 -->
     <div v-if="showS3">
      <h3>Section3</h3>
-     <ConditionalsVif/>
+     <ConditionalsVif/> <hr>
+     
     </div>
     
     
@@ -53,7 +57,8 @@ export default {
   data() {
     return {
       showS2: true,
-      showS3: true
+      showS3: true,
+      logo: 'https://uploads.codesandbox.io/uploads/user/3a8d0d65-9ac0-4303-9d89-08b9ad0f6935/Qy43-vuejs-tutorial.png'
     }
   }
 };

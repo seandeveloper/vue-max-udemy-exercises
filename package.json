@@ -1,7 +1,7 @@
 {
   "name": "udemymaxcourse",
   "version": "1.0.0",
-  "description": "Course Exercises etc...",
+  "description": "Course Exercises GITHUB",
   "main": "src/main.js",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "vue": "^2.5.2"
+    "vue": "2.5.17"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
