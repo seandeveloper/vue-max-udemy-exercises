@@ -1,0 +1,85 @@
+<template>
+  <div>
+  <h4>Exercise5</h4>
+  
+   <!-- 1) Hook up the button to toggle the display of the two paragraphs. 
+   Use both v-if and v-show and inspect the elements to see the difference -->
+  <div>
+    <h5>Question 1</h5>
+    <button @click="show = !show">Toggle</button>
+    <p v-if="show">You either see me ...</p>
+    <p v-else>...or me</p>
+    <p v-show="show">You either see me ...</p>
+    <p v-show="!show">...or me</p>
+  </div>
+
+  <!-- 2) Output an <ul> of array elements of your choice. 
+  Also print the index of each element. -->
+  <h5>Question 2</h5>
+  <ul>
+    <li v-for="(name, index) in array" :key="name">{{index}}: {{name}}</li>
+  </ul>
+
+  <!-- 3) Print all key-value pairs of the following object: myObject
+  . Also print the index of each item. -->
+  <h5>Question 3</h5>
+  <ul>
+    <li v-for="(value, key, index) in myObject" :key="value">
+        {{index + 1}}. {{key | capitalize  }}: {{value}}
+    </li>
+  </ul>
+
+  <!-- 4) Print the following object (only the values) and 
+  also create a nested loop for the array: 
+  {name: 'TESTOBJECT', data: [1.67, 1.33, 0.98, 2.21]} 
+  (hint: use v-for and v-if to achieve this) -->
+  <h5>Question 4</h5>
+  <ul>
+    <li v-for="(value, i) in testData" :key="i">
+      <template v-if="Array.isArray(value)">
+        <div v-for="element in value" :key="element">{{ element }}</div>
+      </template>
+      <template v-else>
+        {{value}}
+      </template>
+    </li>
+  </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Exercise5",
+  data() {
+    return {
+      show: true,
+      array: ['Max', 'Anna', 'Chris', 'Manu'],
+      myObject: {
+        title: 'Lord of the Rings',
+        author: 'J.R.R. Tolkiens',
+        books: '3'
+      },
+      testData: {
+        name: 'TESTOBJECT', 
+        id: 10,
+        data: [1.67, 1.33, 0.98, 2.21]
+      }
+    }
+  },
+  filters: {
+  capitalize (value) {
+    if (!value) return ''
+    value = value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+  }
+}
+}
+</script>
+
+<style scoped>
+
+li {
+  list-style: none
+}
+
+</style>
